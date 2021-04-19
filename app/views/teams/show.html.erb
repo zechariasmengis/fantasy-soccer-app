@@ -1,0 +1,8 @@
+<h1> <%= @team.name %> </h1>
+<p> Manager: <%= @team.user.name %> </p>
+<p> Colors: <%= @team.primary_color + " & " + @team.secondary_color %> </p>
+
+<h3> Roster: </h3>
+<% @players.each do |player| %>
+    <li> <%= link_to player.name, player_path(player) %> </li>
+<% end %>
