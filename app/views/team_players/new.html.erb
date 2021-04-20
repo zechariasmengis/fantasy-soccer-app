@@ -1,0 +1,12 @@
+<h1> Add a player to your team </h1><br>
+
+<%= form_for @team_player do |f| %>
+
+    <%= f.label "Select Your Team" %>
+    <%= f.collection_select :team_id, @teams, :id, :name %><br>
+
+    <%= f.label :player_id %>
+    <%= f.collection_select :player_id, @players, :id, :name %><br>
+
+    <%= f.submit "Add player to team" %>
+<% end %>
