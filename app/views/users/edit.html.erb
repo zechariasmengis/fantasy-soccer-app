@@ -1,0 +1,13 @@
+<h1> Edit <%= @user.name %> User Profile </h1>
+
+<%= form_for @user do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %><br>
+
+    <%= f.label :favorite_club %>
+    <%= f.text_field :favorite_club %><br>
+
+    <%= f.submit %>
+<% end %><br>
+
+<p> <%= link_to "Go back", user_path(@user) %> </p>
