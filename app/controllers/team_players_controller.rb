@@ -3,10 +3,9 @@ class TeamPlayersController < ApplicationController
     def new
         @team = Team.find(params[:id])
         @teams = Team.all
-        # potentially write a custom method to only render players that aren't currently in the team
-        @players = 
-        Player.all.filter do |player|
-            player.id 
+        all_players = Player.all
+        selected_players = @team.players
+        @players = all_players - selected_players
         @team_player = TeamPlayer.new
     end
 
