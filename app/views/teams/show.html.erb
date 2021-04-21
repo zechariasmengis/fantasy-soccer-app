@@ -1,5 +1,5 @@
 <h1> <%= @team.name %> </h1>
-<p> Manager: <%= @team.user.name %> </p>
+<p> Manager: <%= link_to @team.user.name, user_path(@team.user) %> </p>
 <p> Colors: <%= @team.primary_color + " & " + @team.secondary_color %> </p>
 
 <h3> Roster: </h3>
