@@ -14,4 +14,6 @@
     <%= f.collection_select :player_id, @players, :id, :name %><br>
 
     <%= f.submit "Add player to team" %>
-<% end %>
+<% end %><br>
+
+<p> <%= link_to "My Team", team_path(params[:id]) %> <p>
