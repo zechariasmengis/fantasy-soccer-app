@@ -1,5 +1,11 @@
 <h1> Add a player to your team </h1><br>
 
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p> <%= error %> </p>
+    <% end %>
+<% end %>
+
 <%= form_for @team_player do |f| %>
 
     <%= f.hidden_field :team_id, value: @team.id %>
