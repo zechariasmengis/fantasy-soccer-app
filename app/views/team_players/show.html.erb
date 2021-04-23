@@ -1,0 +1,12 @@
+<h1> <%= @team_player.player.name %> </h1>
+<p> Current Team: <%= link_to @team_player.team.name, team_path(@team_player.team_id) %> </p>
+<h3> Bio: </h3>
+
+<li> Position: <%= @team_player.player.position %> </li>
+<li> Rating: <%= @team_player.player.rating %> </li>
+<li> Current Club: <%= @team_player.player.club %> </li>
+<li> Country: <%= @team_player.player.country %> </li>
+<li> Age: <%= @team_player.player.age %> </li><br>
+
+<p> <%= link_to "My Team", team_path(@team_player[:team_id]) %> <p>
+<%= button_to "Remove From Team", team_player_path(@team_player.id), method: :delete %>

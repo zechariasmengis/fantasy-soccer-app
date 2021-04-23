@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :user_leagues
   resources :leagues
   resources :players
-  resources :team_players, except: [:new, :destroy]
+  resources :team_players, except: [:new]
   resources :teams
   resources :users
 

@@ -1,11 +1,15 @@
 class TeamPlayersController < ApplicationController
 
+    def show
+        @team_player = TeamPlayer.find(params[:id])
+    end
+
     def new
         @team = Team.find(params[:id])
         @teams = Team.all
         all_players = Player.all
         selected_players = @team.players
-        @players = all_players - selected_players
+        @players = (all_players - selected_players).sort_by(&:rating).reverse
         @team_player = TeamPlayer.new
     end
 
@@ -17,7 +21,15 @@ class TeamPlayersController < ApplicationController
             flash[:errors] = @team_player.errors.full_messages
             redirect_back(fallback_location: team_path(@team_player[:team_id]))
         end   
-    end 
+    end
+
+    def destroy
+        @team_player = TeamPlayer.find(params[:id])
+        @team = Team.find(@team_player.team_id)
+        @team_player.destroy
+
+        redirect_to team_path(@team)
+    end
 
     private
 
