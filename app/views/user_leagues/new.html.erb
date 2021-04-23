@@ -1,5 +1,11 @@
 <h1> Join a league </h1>
 
+<% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+        <p> <%= error %> </p>
+    <% end %>
+<% end %>
+
 <%= form_for @user_league do |f| %>
 
     <%= f.label :user_id %>

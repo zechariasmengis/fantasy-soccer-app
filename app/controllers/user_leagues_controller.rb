@@ -7,8 +7,13 @@ class UserLeaguesController < ApplicationController
     end
 
     def create
-        user_league = UserLeague.create(user_league_params)
-        redirect_to league_path(user_league.league_id)
+        @user_league = UserLeague.create(user_league_params) 
+        if @user_league.valid?
+            redirect_to league_path(@user_league.league_id)
+        else
+            flash[:errors] = @user_league.errors.full_messages
+            redirect_back(fallback_location: team_path(@user_league[:user_id]))
+        end   
     end
 
     private
