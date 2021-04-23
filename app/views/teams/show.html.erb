@@ -1,12 +1,14 @@
-<h1> <%= @team.name %> </h1>
-<p> Manager: <%= link_to @team.user.name, user_path(@team.user) %> </p>
-<p> Colors: <%= @team.primary_color + " & " + @team.secondary_color %> </p>
+<br><h1 class="text-center"> <%= @team.name %> </h1>
+<p class="text-center"> Manager: <%= link_to @team.user.name, user_path(@team.user) %> </p>
+<p class="text-center"> Colors: <%= @team.primary_color + " & " + @team.secondary_color %> </p>
 
-<h3> Roster: </h3>
-<% @players.each do |team_player| %>
-    <li> <%= link_to team_player.player.name, team_player_path(team_player) %> </li>
+<h3 class="text-center"> Roster </h3>
+<ul class="list-group">
+    <% @players.each do |team_player| %>
+        <li class="list-group-item text-center"> <%= link_to team_player.player.name, team_player_path(team_player) %> </li>
+    <% end %>
+</ul><br>
+
+<% if @team.players.count < 11 %>
+    <h4 class="text-center"><%= link_to "Add a player to your team", new_team_player_path %> </h4>
 <% end %><br>
-
-<% if @team.players.count < 12 %>
-    <p><%= link_to "Add a player to your team", new_team_player_path %> </>
-<% end %>

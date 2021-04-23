@@ -1,10 +1,16 @@
-<h1> <%= @player.name %> </h1>
-<h3> Bio: </h3>
+<br><h1 class="text-center"> <%= @player.name %> </h1><br>
 
-<li> Position: <%= @player.position %> </li>
-<li> Rating: <%= @player.rating %> </li>
-<li> Current Club: <%= @player.club %> </li>
-<li> Country: <%= @player.country %> </li>
-<li> Age: <%= @player.age %> </li><br>
+<div class="card mx-auto shadow p-3 mb-5" style="width: 36rem;">
+  <div class="card-body">
+    <h4 class="card-title text-center">Player Info</h4>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"> Position: <%= @player.position %> </li>
+        <li class="list-group-item"> Rating: <%= @player.rating %> </li>
+        <li class="list-group-item"> Current Club: <%= @player.club %> </li>
+        <li class="list-group-item"> Country: <%= @player.country %> </li>
+        <li class="list-group-item"> Age: <%= @player.age %> </li>
+    </ul>
+  </div>
+</div>
 
-<p> <%= link_to "All Players", players_path %> <p>
+<h5 class="text-center"> <%= link_to "All Players", players_path %> <h5><br>

@@ -1,12 +1,16 @@
-<h1> <%= @team_player.player.name %> </h1>
-<p> Current Team: <%= link_to @team_player.team.name, team_path(@team_player.team_id) %> </p>
-<h3> Bio: </h3>
+<br><h1 class="text-center"> <%= @team_player.player.name %> </h1>
+<p class="text-center"> Current Team: <%= link_to @team_player.team.name, team_path(@team_player.team_id) %> </p><br>
 
-<li> Position: <%= @team_player.player.position %> </li>
-<li> Rating: <%= @team_player.player.rating %> </li>
-<li> Current Club: <%= @team_player.player.club %> </li>
-<li> Country: <%= @team_player.player.country %> </li>
-<li> Age: <%= @team_player.player.age %> </li><br>
-
-<p> <%= link_to "My Team", team_path(@team_player[:team_id]) %> <p>
-<%= button_to "Remove From Team", team_player_path(@team_player.id), method: :delete %>
+<div class="card mx-auto shadow p-3 mb-5" style="width: 36rem;">
+  <div class="card-body">
+    <h4 class="card-title text-center">Player Info</h4>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item"> Position: <%= @team_player.player.position %> </li>
+        <li class="list-group-item"> Rating: <%= @team_player.player.rating %> </li>
+        <li class="list-group-item"> Current Club: <%= @team_player.player.club %> </li>
+        <li class="list-group-item"> Country: <%= @team_player.player.country %> </li>
+        <li class="list-group-item"> Age: <%= @team_player.player.age %> </li>
+    </ul>
+  </div>
+</div>
+<a class="text-center"> <%= button_to "Remove From Team", team_player_path(@team_player.id), method: :delete %> </a>

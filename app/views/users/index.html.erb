@@ -1,8 +1,8 @@
 <br><h1 class="text-center"> All Users </h1><br>
 <ul class="list-group">
     <% @users.each do |user| %>
-        <li class="list-group-item"> <%= link_to user.name, user_path(user) %> </li>
+        <li class="list-group-item text-center"> <%= link_to user.name, user_path(user) %> </li>
     <% end %>
 </ul><br>
 
-<p> <%= link_to "Create new User", new_user_path %> </p>
+<h5 class="text-center"> <%= link_to "Create new User", new_user_path %> </h5>

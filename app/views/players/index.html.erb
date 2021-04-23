@@ -1,6 +1,6 @@
 <br><h1 class="text-center"> All Players </h1><br>
 <ul class="list-group">
     <% @players.each do |player| %>
-        <li class="list-group-item"> <%= link_to player.name + " - " + player.position, player_path(player) %> </li>
+        <li class="list-group-item text-center"> <%= link_to player.name + " - " + player.position, player_path(player) %> </li>
     <% end %>
 </ul>

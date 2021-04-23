@@ -1,8 +1,8 @@
 <br><h1 class="text-center"> All Leagues </h1><br>
 <ul class="list-group">
     <% @leagues.each do |league| %>
-        <li class="list-group-item"> <%= link_to league.name, league_path(league) %> </li>
+        <li class="list-group-item text-center"> <%= link_to league.name, league_path(league) %> </li>
     <% end %><br>
 </ul>
 
-<p> <%= link_to "Add new League", new_league_path %> </p>
+<h5 class="text-center"> <%= link_to "Add new League", new_league_path %> </h5>
