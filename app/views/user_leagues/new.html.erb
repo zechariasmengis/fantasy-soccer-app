@@ -8,8 +8,7 @@
 
 <%= form_for @user_league do |f| %>
 
-    <%= f.label :user_id %>
-    <%= f.collection_select :user_id, @users, :id, :name %><br>
+    <%= f.hidden_field :user_id, value: @user.id %>
 
     <%= f.label :league_id %>
     <%= f.collection_select :league_id, @leagues, :id, :name %><br>

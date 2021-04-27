@@ -1,9 +1,15 @@
 class UserLeaguesController < ApplicationController
 
+    def show
+        @user_league = UserLeague.find(params[:id])
+    end
+
     def new
+        @user = User.find(params[:id])
         @users = User.all
         @leagues = League.all
         @user_league = UserLeague.new
+        
     end
 
     def create

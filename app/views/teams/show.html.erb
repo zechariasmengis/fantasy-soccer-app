@@ -2,6 +2,15 @@
 <p class="text-center"> Manager: <%= link_to @team.user.name, user_path(@team.user) %> </p>
 <p class="text-center"> Colors: <%= @team.primary_color + " & " + @team.secondary_color %> </p>
 
+<h3 class="text-center"> My Leagues: </h3>
+<ul class="list-group">
+<% @team.user.user_leagues.each do |user_league| %>
+    <li class="list-group-item text-center"> <%= link_to user_league.league.name, league_path(user_league.league_id) %> </li>
+<% end %>
+</ul><br>
+
+<p class="text-center"> <%= link_to "Join a league", new_user_league_path(@team.user_id) %> </p><br>
+
 <h3 class="text-center"> Roster </h3>
 <ul class="list-group">
     <% @players.each do |team_player| %>
