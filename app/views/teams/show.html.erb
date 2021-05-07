@@ -12,6 +12,12 @@
 <p class="text-center"> <%= link_to "Join a league", new_user_league_path(@team.user_id) %> </p><br>
 
 <h3 class="text-center"> Roster </h3>
+<div class="pitch-container">
+<div class="pitch-header"> </div>
+    <div class="pitch">
+
+    </div>
+</div>
 <ul class="list-group">
     <% @players.each do |team_player| %>
         <li class="list-group-item text-center"> <%= link_to team_player.player.name, team_player_path(team_player) %> </li>
