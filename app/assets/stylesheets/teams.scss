@@ -3,12 +3,21 @@
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
 .pitch-container {
-    height: 800px;
+    height: 680px;
     background-color: purple;
     width: 50%;
     margin: 0px auto;
 }
 
+.pitch-header {
+    height: 136px;
+}
+
 .pitch {
-    
+    height: 544px;
+    background-color: green;
+}
+
+.pitch-row {
+    height: 25%;
 }
